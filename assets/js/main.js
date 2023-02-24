@@ -37,19 +37,26 @@
 
   // Dark Mode Theme
   const toggle = document.querySelector(".toggle-item"),
-      body=document.querySelector('body'),
-      content=document.getElementById('context');
+  body=document.querySelector('body'),
+  content=document.getElementById('context');
+  let logo=document.getElementById("logoURL");
+
+  let darkImageThemeLogoURL = "assets/img/logo2.png";
+  let lightImageThemeLogoURL = "assets/img/logo3.png";
 
 
   toggle.addEventListener("click", function(){
     this.classList.toggle("active");
     body.classList.toggle("active");
+    logo.classList.toggle("active");
 
       // function to change content from light -- dark
 
     if(toggle.classList.contains("active")){
         content.innerHTML="Dark Mode";
+        logo.src = lightImageThemeLogoURL;
     }else{
+        logo.src = darkImageThemeLogoURL;
         content.innerHTML="Light Mode";
     }
   });
